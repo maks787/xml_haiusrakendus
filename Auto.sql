@@ -1,3 +1,8 @@
+---CREATE DATABASE 
+create database autoTA;
+---USE DATABASE
+USE autoTA;
+---create table and 
 create table Auto (
 	autoID INT,
 	registrinumber VARCHAR(50),
@@ -55,3 +60,15 @@ insert into Auto (autoID, registrinumber, mark, omanik, vaasta) values (47, '935
 insert into Auto (autoID, registrinumber, mark, omanik, vaasta) values (48, '786 OJY', 'Lincoln', 'Wikizz', 2010);
 insert into Auto (autoID, registrinumber, mark, omanik, vaasta) values (49, '644 RXJ', 'Mercedes-Benz', 'Avavee', 1999);
 insert into Auto (autoID, registrinumber, mark, omanik, vaasta) values (50, '425 SSM', 'Chevrolet', 'Feedmix', 2011);
+---xml jada loomine
+ ---mark on auto atribuute
+
+
+SELECT mark as '@mark',
+	registrinumber,
+	mark,
+	vaasta,
+	omanik
+FROM auto FOR XML PATH('auto'), ROOT('autod');
+
+
